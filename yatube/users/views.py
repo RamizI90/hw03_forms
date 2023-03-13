@@ -1,6 +1,5 @@
 from django.views.generic import CreateView
 
-
 from django.urls import reverse_lazy
 
 
@@ -11,3 +10,8 @@ class SignUp(CreateView):
     form_class = CreationForm
     success_url = reverse_lazy('posts:index')
     template_name = 'users/signup.html'
+
+class PasswordResetView(CreateView):
+    form_class = CreationForm
+    success_url = reverse_lazy('???')
+    template_name = 'users/password_reset_form.html'
