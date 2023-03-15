@@ -1,3 +1,4 @@
+# Импортируем из приложения django.contrib.auth нужный view-класс
 from django.contrib.auth.views import (LoginView, LogoutView,
                                        PasswordChangeDoneView,
                                        PasswordChangeView,
@@ -62,18 +63,3 @@ urlpatterns = [
         name='password_reset_complete'
     )
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

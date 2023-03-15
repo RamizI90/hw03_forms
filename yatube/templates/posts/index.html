@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
-{% block title %}
-  Последние обновления на сайте
-{% endblock%}
+{% block title %} Последние обновления сайта {% endblock %}
 {% block content %}
-<h1> Последние обновления на сайте</h1>
-  {% for post in posts%}
-  {% include 'includes/single_post.html' %}
-  {% include 'includes/article.html' %}
-  {% endfor %}
-  {% include 'includes/paginator.html'%}
+<h1>Последние обновления на сайте</h1>
+{% for post in page_obj %}
+{% include 'includes/posts_details.html' %}
+{% include 'includes/navigation_details.html' %}
+{% endfor %}
+
+{% include 'posts/includes/paginator.html' %}
 {% endblock %}
-      

@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
 
+
 class Post(models.Model):
     text = models.TextField(_("Текст"))
     pub_date = models.DateTimeField(_("Дата Публикации"), auto_now_add=True)
@@ -41,9 +42,3 @@ class Group(models.Model):
 
     def __str__(self):
         return self.title
-
-
-
-
-
-

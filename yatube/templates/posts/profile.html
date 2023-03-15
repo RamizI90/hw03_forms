@@ -1,18 +1,18 @@
-{% extends 'base.html'%}
-{% block title %} Профайл пользователя {{ username }}{% endblock %}
-{% block content %}
-  <h1>Все посты пользователя {{author.get_full_name}}</h1>
-  <h3>Всего постов: {{ post_count }} </h3>
-  <article>  
-    {% for post in page_obj %}
-    <ul>
-      <li>
-        Дата публикации: {{post.pub_date|date: "d E Y"}}
-      </li>
-    </ul>
-    <p> {{post.text}} </p>
-  </article>
-    {% include 'includes/article.html' %}
-    {%endfor%}
-    {%include 'includes/paginator.html'%}
+{% extends 'base.html' %}
+{% block title %} Профайл пользователя {{ username }} {% endblock %}
+{% block content %}  
+        <h1>Все посты пользователя {{ author.get_full_name }} </h1>
+        <h3>Всего постов: {{ post_count }} </h3>   
+        <article>
+        {% for post in page_obj %}
+        <ul>
+            <li>
+              Дата публикации: {{ post.pub_date|date:"d E Y" }}
+            </li>
+        </ul>
+          <p>{{ post.text }}</p>
+        </article> 
+        {% include 'includes/navigation_details.html' %}
+        {% endfor %}
+        {% include 'posts/includes/paginator.html' %}
 {% endblock %}
