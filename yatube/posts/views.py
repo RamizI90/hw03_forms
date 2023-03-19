@@ -80,6 +80,7 @@ def post_create(request):
         form = PostForm()
     return render(request, template, {'form': form})
 
+
 @login_required
 def post_edit(request, post_id):
     template = 'posts/create_post.html'
