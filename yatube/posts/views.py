@@ -80,7 +80,7 @@ def post_create(request):
         form = PostForm()
     return render(request, template, {'form': form})
 
-
+@login_required
 def post_edit(request, post_id):
     template = 'posts/create_post.html'
 
@@ -93,7 +93,7 @@ def post_edit(request, post_id):
         if form.is_valid():
             form.save()
             return redirect('posts:post_detail', post_id)
-        return render(request, template, {'form': form})
+        return render(request, template, {'form': form, 'is_edit': True})
 
     form = PostForm(instance=post)
     return render(request, template, {'form': form, 'is_edit': True})
