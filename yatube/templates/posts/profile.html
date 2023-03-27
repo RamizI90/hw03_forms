@@ -11,8 +11,9 @@
             </li>
         </ul>
           <p>{{ post.text }}</p>
-        </article> 
+         
         {% include 'includes/navigation_details.html' %}
+      </article>
         {% endfor %}
         {% include 'posts/includes/paginator.html' %}
 {% endblock %}
