@@ -1,7 +1,5 @@
 <article>
-    <a href="{% url 'posts:post_detail' post.pk %}">подробная информация </a>
-{% if post.group %}
-    <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
-{% endif %}
-    {% if not forloop.last %}<hr>{% endif %}
+    <a href="{% url 'posts/post_detail.html' %}">подробная информация </a>
 </article>
+    <a href="{% url 'posts/group_posts.html' %}">все записи группы</a>
+<hr>
